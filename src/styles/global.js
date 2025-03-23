@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
   * {
@@ -32,4 +32,4 @@ export default createGlobalStyle`
   button:hover, a:hover {
     filter: brightness(0.9);
   }
-`
+`;
