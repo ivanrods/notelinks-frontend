@@ -15,24 +15,39 @@ export const Container = styled.div`
     "NewNote Content";
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header"
+      "Brand"
+      "Menu"
+       "Search"
+      "Content"
+      "NewNote";
+  }
 `;
+
 export const Brand = styled.div`
   grid-area: Brand;
-
   display: flex;
   justify-content: center;
   align-items: center;
 
-  border-bottom-width: 1px;
-  border-bottom-style: ${({ theme }) => theme.COLORS.BACKGROUND_700};
-
+  border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_700};
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
   > h1 {
     font-size: 24px;
     color: ${({ theme }) => theme.COLORS.ORANGE};
   }
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
 `;
+
 export const Menu = styled.ul`
   grid-area: Menu;
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
@@ -43,16 +58,37 @@ export const Menu = styled.ul`
   > li {
     margin-bottom: 24px;
   }
+
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: space-around;
+    padding: 16px 0;
+
+    > li {
+      margin-bottom: 0;
+    }
+  }
 `;
+
 export const Search = styled.div`
   grid-area: Search;
   padding: 64px 64px 0;
+
+  @media (max-width: 768px) {
+    padding: 8px 12px;
+  }
 `;
+
 export const Content = styled.div`
   grid-area: Content;
   padding: 0 64px;
   overflow-y: auto;
+
+  @media (max-width: 768px) {
+    padding: 0 16px;
+  }
 `;
+
 export const NewNote = styled(Link)`
   grid-area: NewNote;
 
@@ -66,5 +102,10 @@ export const NewNote = styled(Link)`
 
   svg {
     margin-right: 8px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 16px;
+    font-size: 14px;
   }
 `;

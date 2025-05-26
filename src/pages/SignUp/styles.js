@@ -5,6 +5,10 @@ export const Container = styled.div`
   height: 100vh;
   display: flex;
   align-items: stretch;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const Form = styled.form`
@@ -33,9 +37,36 @@ export const Form = styled.form`
     margin-top: 124px;
     color: ${({ theme }) => theme.COLORS.ORANGE};
   }
+
+  @media (max-width: 768px) {
+    padding: 40px 20px;
+
+    > h1 {
+      font-size: 36px;
+    }
+
+    > h2 {
+      font-size: 20px;
+      margin: 24px 0;
+    }
+
+    > p {
+      font-size: 12px;
+    }
+
+    > a {
+      margin-top: 64px;
+    }
+  }
 `;
+
 export const Background = styled.div`
   flex: 1;
   background: url(${backgroundImg}) no-repeat center center;
   background-size: cover;
+
+  @media (max-width: 768px) {
+    height: 200px;
+    flex: none;
+  }
 `;
