@@ -48,6 +48,7 @@ export const Profile = styled(Link)`
       color: ${({ theme }) => theme.COLORS.WHITE};
     }
   }
+ 
 
   @media (max-width: 768px) {
     > div {

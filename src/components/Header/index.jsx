@@ -5,6 +5,7 @@ import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
 import avatarPlaceholder from "../../assets/avatar_placeholder.png";
 
+
 export function Header() {
   const { signOut, user } = useAuth();
   const navigation = useNavigate();

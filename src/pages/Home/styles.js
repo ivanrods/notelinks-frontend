@@ -5,36 +5,46 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
 
-  display: grid;
-  grid-template-columns: 250px auto;
-  grid-template-rows: 105px 128px auto 64px;
-  grid-template-areas:
-    "Brand header"
-    "Menu Search"
-    "Menu Content"
-    "NewNote Content";
+  display: flex;
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "header"
-      "Brand"
-      "Menu"
-       "Search"
-      "Content"
-      "NewNote";
+  > div.sidebar {
+    width: 250px;
+    height: 100%;
   }
+  > div.main {
+    width: 100%;
+    height: 100%;
+  }
+
+   > svg {
+    color: white;
+position: fixed;
+top: 50%;
+left: 10px;
+transform: translateY(-50%);
+  }
+  @media (max-width: 768px) {
+   
+
+    > div.sidebar {
+    
+        display: none; /* ou transformar em drawer */
+      }
+    }
+
+    > div.main {
+     
+    }
+  
 `;
 
 export const Brand = styled.div`
-  grid-area: Brand;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  height: 105px;
   border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_700};
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
@@ -49,9 +59,8 @@ export const Brand = styled.div`
 `;
 
 export const Menu = styled.ul`
-  grid-area: Menu;
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
-
+height: calc(100% - 170px);
   padding-top: 64px;
   text-align: center;
 
@@ -71,7 +80,7 @@ export const Menu = styled.ul`
 `;
 
 export const Search = styled.div`
-  grid-area: Search;
+  width: 100;
   padding: 64px 64px 0;
 
   @media (max-width: 768px) {
@@ -90,12 +99,10 @@ export const Content = styled.div`
 `;
 
 export const NewNote = styled(Link)`
-  grid-area: NewNote;
-
   background-color: ${({ theme }) => theme.COLORS.ORANGE};
   color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
   border: none;
-  
+height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -54,55 +54,57 @@ export function Home() {
 
   return (
     <Container>
-      <Brand>
-        <h1>NoteLinks</h1>
-      </Brand>
-
-      <Header />
-
-      <Menu>
-        <li>
-          <ButtonText
-            title="Todos"
-            onClick={() => handleTagSelected("all")}
-            $isActive={tagsSelected.length === 0}
-          />
-        </li>
-        {tags &&
-          tags.map((tag) => (
-            <li key={String(tag.id)}>
-              <ButtonText
-                title={tag.name}
-                onClick={() => handleTagSelected(tag.name)}
-                $isActive={tagsSelected.includes(tag.name)}
-              />
-            </li>
-          ))}
-      </Menu>
-
-      <Search>
-        <Input
-          placeholder="Pesquisar pelo título"
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </Search>
-
-      <Content>
-        <Section title="Minhas notas">
-          {notes.map((note) => (
-            <Note
-              key={String(note.id)}
-              data={note}
-              onClick={() => handleDetails(note.id)}
+      <div className="sidebar">
+        <Brand>
+          <h1>NoteLinks</h1>
+        </Brand>
+        <Menu>
+          <li>
+            <ButtonText
+              title="Todos"
+              onClick={() => handleTagSelected("all")}
+              $isActive={tagsSelected.length === 0}
             />
-          ))}
-        </Section>
-      </Content>
+          </li>
+          {tags &&
+            tags.map((tag) => (
+              <li key={String(tag.id)}>
+                <ButtonText
+                  title={tag.name}
+                  onClick={() => handleTagSelected(tag.name)}
+                  $isActive={tagsSelected.includes(tag.name)}
+                />
+              </li>
+            ))}
+        </Menu>
+        <NewNote to="/New">
+          <FiPlus />
+          Ciar nota
+        </NewNote>
+      </div>
 
-      <NewNote to="/New">
-        <FiPlus />
-        Ciar nota
-      </NewNote>
+      <div className="main">
+        <Header />
+
+        <Search>
+          <Input
+            placeholder="Pesquisar pelo título"
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </Search>
+
+        <Content>
+          <Section title="Minhas notas">
+            {notes.map((note) => (
+              <Note
+                key={String(note.id)}
+                data={note}
+                onClick={() => handleDetails(note.id)}
+              />
+            ))}
+          </Section>
+        </Content>
+      </div>
     </Container>
   );
 }
