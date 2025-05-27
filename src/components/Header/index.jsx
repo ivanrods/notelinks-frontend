@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { RiShutDownLine } from "react-icons/ri";
+import { CiLogin } from "react-icons/ci";
 import { Container, Profile, Logout } from "./styles";
 import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
-import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
+import avatarPlaceholder from "../../assets/avatar_placeholder.png";
 
 export function Header() {
   const { signOut, user } = useAuth();
@@ -28,7 +28,7 @@ export function Header() {
         </div>
       </Profile>
       <Logout onClick={handleSignOut}>
-        <RiShutDownLine />
+        <CiLogin size={32}/>
       </Logout>
     </Container>
   );

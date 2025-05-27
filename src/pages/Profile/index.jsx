@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
 
 import { api } from "../../services/api";
-import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
+import avatarPlaceholder from "../../assets/avatar_placeholder.png";
 
 import { Container, Form, Avatar } from "./styles";
 import { Input } from "../../components/Input";

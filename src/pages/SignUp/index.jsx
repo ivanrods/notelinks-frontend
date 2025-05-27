@@ -28,7 +28,7 @@ export function SignUp() {
         if (error.response) {
           alert(error.response.data.message);
         } else {
-          lert("Não foi possível cadastrar");
+          alert("Não foi possível cadastrar");
         }
       });
   }
@@ -37,10 +37,10 @@ export function SignUp() {
     <Container>
       <Background />
       <Form>
-        <h1>Rocket Notes</h1>
+        <h1>NoteLinks</h1>
         <p>Aplicações para salvar e geranciar seus links úteis.</p>
 
-        <h2>Creie sua conta</h2>
+        <h2>Crie sua conta</h2>
         <Input
           placeholder="Nome"
           type="text"
