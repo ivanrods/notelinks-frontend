@@ -8,12 +8,15 @@ import { Input } from "../../components/Input";
 import { Note } from "../../components/Note";
 import { Section } from "../../components/Section";
 import { ButtonText } from "../../components/ButtonText";
+import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack } from "react-icons/io";
 
 export function Home() {
   const [search, setSearch] = useState("");
   const [tags, setTags] = useState([]);
   const [tagsSelected, setTagsSelected] = useState([]);
   const [notes, setNotes] = useState([]);
+  const [showSidebar, setShowSidebar] = useState(true);
 
   const navigate = useNavigate();
 
@@ -55,32 +58,42 @@ export function Home() {
   return (
     <Container>
       <div className="sidebar">
-        <Brand>
-          <h1>NoteLinks</h1>
-        </Brand>
-        <Menu>
-          <li>
-            <ButtonText
-              title="Todos"
-              onClick={() => handleTagSelected("all")}
-              $isActive={tagsSelected.length === 0}
-            />
-          </li>
-          {tags &&
-            tags.map((tag) => (
-              <li key={String(tag.id)}>
-                <ButtonText
-                  title={tag.name}
-                  onClick={() => handleTagSelected(tag.name)}
-                  $isActive={tagsSelected.includes(tag.name)}
-                />
-              </li>
-            ))}
-        </Menu>
-        <NewNote to="/New">
-          <FiPlus />
-          Ciar nota
-        </NewNote>
+        <button onClick={() => setShowSidebar(!showSidebar)}>
+          {showSidebar ? (
+            <IoIosArrowBack size={32} />
+          ) : (
+            <IoIosArrowForward size={32} />
+          )}
+        </button>
+
+        <div className={`sidebar-content ${!showSidebar ? "hide" : ""}`}>
+          <Brand>
+            <h1>NoteLinks</h1>
+          </Brand>
+          <Menu>
+            <li>
+              <ButtonText
+                title="Todos"
+                onClick={() => handleTagSelected("all")}
+                $isActive={tagsSelected.length === 0}
+              />
+            </li>
+            {tags &&
+              tags.map((tag) => (
+                <li key={String(tag.id)}>
+                  <ButtonText
+                    title={tag.name}
+                    onClick={() => handleTagSelected(tag.name)}
+                    $isActive={tagsSelected.includes(tag.name)}
+                  />
+                </li>
+              ))}
+          </Menu>
+          <NewNote to="/New">
+            <FiPlus />
+            Ciar nota
+          </NewNote>
+        </div>
       </div>
 
       <div className="main">

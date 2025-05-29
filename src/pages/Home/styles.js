@@ -9,35 +9,50 @@ export const Container = styled.div`
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
-  > div.sidebar {
+  .sidebar {
+    width: 260px;
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+    > button {
+      display: none;
+    }
+  }
+
+  .sidebar-content {
     width: 250px;
     height: 100%;
   }
+
+  .sidebar-content.hide {
+    display: block;
+  }
+
   > div.main {
     width: 100%;
     height: 100%;
   }
 
-   > svg {
-    color: white;
-position: fixed;
-top: 50%;
-left: 10px;
-transform: translateY(-50%);
-  }
   @media (max-width: 768px) {
-   
-
     > div.sidebar {
-    
-        display: none; /* ou transformar em drawer */
+      width: auto;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+
+      > button {
+        display: block;
+        background-color: transparent;
+        border: none;
+        color: white;
       }
     }
-
-    > div.main {
-     
+    .sidebar-content.hide {
+      display: none;
     }
-  
+  }
 `;
 
 export const Brand = styled.div`
@@ -60,7 +75,7 @@ export const Brand = styled.div`
 
 export const Menu = styled.ul`
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
-height: calc(100% - 170px);
+  height: calc(100% - 170px);
   padding-top: 64px;
   text-align: center;
 
@@ -102,7 +117,7 @@ export const NewNote = styled(Link)`
   background-color: ${({ theme }) => theme.COLORS.ORANGE};
   color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
   border: none;
-height: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
