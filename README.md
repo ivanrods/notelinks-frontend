@@ -1,10 +1,10 @@
-# 📝 RocketNotes - Gerenciador de Anotações  
+# 📝 NoteLinks - Gerenciador de links e notas
 
-RocketNotes é uma aplicação web frontend desenvolvida com React para gerenciar anotações de forma eficiente. Com suporte para adicionar tags, links e descrições, você pode organizar suas anotações de maneira prática e acessá-las rapidamente.  
+NoteLinks é uma aplicação web frontend desenvolvida com React para gerenciar links e notas de forma eficiente. Com suporte para adicionar tags, links e descrições, você pode organizar suas anotações de maneira prática e acessá-las rapidamente.  
 
 ## 🎨 Demonstração  
 
-![rocket-notes](https://github.com/user-attachments/assets/e9bb4567-3c36-4df2-80df-22ab90d88625)
+![note-link](https://github.com/user-attachments/assets/767af610-7336-4679-945a-bb1ffb1f8a1c)
 
 
 ## 🚀 Funcionalidades  
@@ -17,7 +17,7 @@ RocketNotes é uma aplicação web frontend desenvolvida com React para gerencia
 
 ## 🔗 Acesse o projeto  
 
-[![Ver Demo](https://img.shields.io/badge/Demo-Ao%20vivo-blue?style=for-the-badge&logo=vercel)](https://rocketnotes-frontend-web.netlify.app/)  
+[![Ver Demo](https://img.shields.io/badge/Demo-Ao%20vivo-blue?style=for-the-badge&logo=vercel)](https://notelinks.netlify.app/)  
 
 ## 🛠️ Tecnologias Utilizadas  
 
